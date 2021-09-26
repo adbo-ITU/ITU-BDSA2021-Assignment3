@@ -17,5 +17,17 @@ namespace BDSA2020.Assignment03
             // TODO
             throw new Exception();
         }
+
+        public static IEnumerable<string> HarryPotterUnique_WithExtensions()
+        {
+            // TODO
+            throw new Exception();
+        }
+
+        public static IEnumerable<string> HarryPotterUnique_WithVeryLinq()
+        {
+            // TODO
+            throw new Exception();
+        }
     }
 }
