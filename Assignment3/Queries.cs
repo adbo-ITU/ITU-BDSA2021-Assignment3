@@ -53,5 +53,23 @@ namespace BDSA2020.Assignment03
                          select (w.Name, w.Year);
             return tuples.Distinct();
         }
+
+        public static IEnumerable<string> NamesReverseByCreatorThenName_WithExtensions()
+        {
+            var wizards = Wizard.Wizards.Value;
+            return wizards
+                .OrderByDescending(w => w.Creator)
+                .ThenBy(w => w.Name)
+                .Select(w => w.Name);
+        }
+
+        public static IEnumerable<string> NamesReverseByCreatorThenName_WithVeryLinq()
+        {
+            var wizards = Wizard.Wizards.Value;
+
+            return from w in wizards
+                   orderby w.Creator descending, w.Name ascending
+                   select w.Name;
+        }
     }
 }

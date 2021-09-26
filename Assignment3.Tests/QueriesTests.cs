@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using System.Collections.Generic;
 
 namespace BDSA2020.Assignment03.Tests
 {
@@ -40,6 +41,41 @@ namespace BDSA2020.Assignment03.Tests
             };
             Assert.Equal(expectedPairs, withExtensions);
             Assert.Equal(expectedPairs, withLinq);
+        }
+
+        [Fact]
+        public void NamesReverseByCreatorThenName_returns_correct()
+        {
+            var withExtensions = Queries.NamesReverseByCreatorThenName_WithExtensions();
+            var withLinq = Queries.NamesReverseByCreatorThenName_WithVeryLinq();
+
+            IEnumerable<string> expectedNames = new[] {
+                "Alex Russo",
+
+                "Doctor Strange",
+
+                "Tara",
+                "Willow",
+
+                "Merlin",
+
+                "Gandalf",
+                "Sauron",
+
+                "Alastor Moody",
+                "Dumbledore",
+                "Harry Potter",
+                "Harry Potter",
+
+                "Darth Maul",
+                "Darth Sidious",
+                "Darth Vader",
+                "Yoda",
+
+                "The White Witch",
+            };
+            Assert.Equal(expectedNames, withExtensions);
+            Assert.Equal(expectedNames, withLinq);
         }
     }
 }
