@@ -16,16 +16,16 @@ namespace BDSA2020.Assignment03.Tests
             Assert.Equal(expectedNames, withLinq);
         }
 
-        // [Fact]
-        // public void FirstSithLordYear_returns_1977()
-        // {
-        //     var withExtensions = Queries.FirstSithLordYear_WithExtensions();
-        //     var withLinq = Queries.FirstSithLordYear_WithVeryLinq();
+        [Fact]
+        public void FirstSithLordYear_returns_1977()
+        {
+            var withExtensions = Queries.FirstSithLordYear_WithExtensions();
+            var withLinq = Queries.FirstSithLordYear_WithVeryLinq();
 
-        //     var expectedYear = 1977;
-        //     Assert.Equal(expectedYear, withExtensions);
-        //     Assert.Equal(expectedYear, withLinq);
-        // }
+            var expectedYear = 1977;
+            Assert.Equal(expectedYear, withExtensions);
+            Assert.Equal(expectedYear, withLinq);
+        }
 
         // [Fact]
         // public void HarryPotterUnique_returns_harry_dumbledore_moody_with_year()

@@ -20,17 +20,20 @@ namespace BDSA2020.Assignment03
                    select w.Name;
         }
 
-        // public static int FirstSithLordYear_WithExtensions()
-        // {
-        //     // TODO
-        //     throw new Exception();
-        // }
+        public static int? FirstSithLordYear_WithExtensions()
+        {
+            var wizards = Wizard.Wizards.Value;
+            return wizards.Where(w => w.Name.StartsWith("Darth")).Select(w => w.Year).Min();
+        }
 
-        // public static int FirstSithLordYear_WithVeryLinq()
-        // {
-        //     // TODO
-        //     throw new Exception();
-        // }
+        public static int? FirstSithLordYear_WithVeryLinq()
+        {
+            var wizards = Wizard.Wizards.Value;
+            var years = from w in wizards
+                        where w.Name.StartsWith("Darth")
+                        select w.Year;
+            return years.Min();
+        }
 
         // public static IEnumerable<(string, int)> HarryPotterUnique_WithExtensions()
         // {
