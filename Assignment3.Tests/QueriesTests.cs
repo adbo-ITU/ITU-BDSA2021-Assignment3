@@ -27,19 +27,19 @@ namespace BDSA2020.Assignment03.Tests
             Assert.Equal(expectedYear, withLinq);
         }
 
-        // [Fact]
-        // public void HarryPotterUnique_returns_harry_dumbledore_moody_with_year()
-        // {
-        //     var withExtensions = Queries.HarryPotterUnique_WithExtensions();
-        //     var withLinq = Queries.HarryPotterUnique_WithVeryLinq();
+        [Fact]
+        public void HarryPotterUnique_returns_harry_dumbledore_moody_with_year()
+        {
+            var withExtensions = Queries.HarryPotterUnique_WithExtensions();
+            var withLinq = Queries.HarryPotterUnique_WithVeryLinq();
 
-        //     var expectedPairs = new[] {
-        //         ("Harry Potter", 1997),
-        //         ("Dumbledore", 1997),
-        //         ("Alastor Moody", 2005),
-        //     };
-        //     Assert.Equal(expectedPairs, withExtensions);
-        //     Assert.Equal(expectedPairs, withLinq);
-        // }
+            var expectedPairs = new (string, int?)[] {
+                ("Harry Potter", 1997),
+                ("Dumbledore", 1997),
+                ("Alastor Moody", 2005),
+            };
+            Assert.Equal(expectedPairs, withExtensions);
+            Assert.Equal(expectedPairs, withLinq);
+        }
     }
 }

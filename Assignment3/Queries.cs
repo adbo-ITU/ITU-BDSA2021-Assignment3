@@ -35,16 +35,23 @@ namespace BDSA2020.Assignment03
             return years.Min();
         }
 
-        // public static IEnumerable<(string, int)> HarryPotterUnique_WithExtensions()
-        // {
-        //     // TODO
-        //     throw new Exception();
-        // }
+        public static IEnumerable<(string, int?)> HarryPotterUnique_WithExtensions()
+        {
+            var wizards = Wizard.Wizards.Value;
 
-        // public static IEnumerable<(string, int)> HarryPotterUnique_WithVeryLinq()
-        // {
-        //     // TODO
-        //     throw new Exception();
-        // }
+            return wizards
+                .Where(w => w.Medium.Contains("Harry Potter"))
+                .Select(w => (w.Name, w.Year))
+                .Distinct();
+        }
+
+        public static IEnumerable<(string, int?)> HarryPotterUnique_WithVeryLinq()
+        {
+            var wizards = Wizard.Wizards.Value;
+            var tuples = from w in wizards
+                         where w.Medium.Contains("Harry Potter")
+                         select (w.Name, w.Year);
+            return tuples.Distinct();
+        }
     }
 }
